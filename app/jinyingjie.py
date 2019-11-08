@@ -9,9 +9,13 @@ a = 0
 
 
 def get_cookie(threadName):
+    lock.acquire()
     print('浏览器', threadName+1, '，开启成功')
+    lock.release()
     option = webdriver.ChromeOptions()
     option.add_argument("headless")
+    option.add_argument('--no-sandbox')
+    option.add_argument('--disable-gpu')
     option.add_argument('blink-settings=imagesEnabled=false')  # 不加载图片, 提升速度
     driver = webdriver.Chrome(executable_path='./chromedriver', chrome_options=option)
     # driver = webdriver.Chrome(executable_path='./chromedriver')
