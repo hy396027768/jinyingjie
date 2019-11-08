@@ -13,7 +13,7 @@ def get_cookie(threadName):
     print('浏览器', threadName+1, '，开启成功')
     lock.release()
     option = webdriver.ChromeOptions()
-    option.add_argument("headless")
+    # option.add_argument("headless")
     option.add_argument('--no-sandbox')
     option.add_argument('--disable-gpu')
     option.add_argument('blink-settings=imagesEnabled=false')  # 不加载图片, 提升速度
@@ -24,8 +24,8 @@ def get_cookie(threadName):
     # try:
     driver.find_elements_by_class_name('Btn')[1].click()
     time.sleep(0.4)
-    driver.find_element_by_id('loginname').send_keys('13682226465')
-    driver.find_element_by_id('password').send_keys('laiyujie11')
+    driver.find_element_by_id('loginname').send_keys('17671840204')
+    driver.find_element_by_id('password').send_keys('luowenxin11')
     time.sleep(0.2)
     driver.find_element_by_id('login').click()
     time.sleep(2)
@@ -43,8 +43,8 @@ def get_cookie(threadName):
             # try:
             driver.find_elements_by_class_name('Btn')[1].click()
             time.sleep(0.4)
-            driver.find_element_by_id('loginname').send_keys('13682226465')
-            driver.find_element_by_id('password').send_keys('laiyujie11')
+            driver.find_element_by_id('loginname').send_keys('17671840204')
+            driver.find_element_by_id('password').send_keys('luowenxin11')
             time.sleep(0.2)
             driver.find_element_by_id('login').click()
             time.sleep(2)
@@ -65,14 +65,14 @@ def get_cookie(threadName):
             a = a + 1
             print('价钱%s，第' % totlePay, threadName+1, '个浏览器执行第', str(a)+'次刷新')
             lock.release()
-            if totlePay == '¥5480.00':
+            if totlePay != '¥6440.00':
                 driver.find_element_by_id('submitBtn').click()
                 print('已下单，请支付')
                 driver.quit()
             else:
                 driver.refresh()
 
-        elif now.day == 11 and now.hour == 00 and now.minute == 2:
+        elif now.day == 11 and now.hour == 00 and now.minute == 5:
             break
 
 
